@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Donal Quinlan on AI governance and delivery — identity controls, auditability, human review, and risk management for AI-powered products.">
+  <title>AI Governance and Delivery | Donal Quinlan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Donal Quinlan</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#highlights">Highlights</a></li>
+          <li><a href="index.html#case-studies">Case Studies</a></li>
+          <li><a href="ai-governance.html" aria-current="page">AI Governance</a></li>
+          <li><a href="index.html#toolkit">TPM Toolkit</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Perspective</p>
+        <h1>AI Governance and Delivery</h1>
+        <p class="lead">
+          My background in release governance, production readiness, audit controls, fintech compliance, and
+          healthcare-adjacent systems has shaped how I think about AI governance. Many of the challenges are
+          familiar: understanding risk, defining controls, establishing accountability, and balancing innovation
+          with safety.
+        </p>
+        <p class="page-hero-note">
+          The topics below reflect how I apply program leadership and operational discipline to AI-powered products—not as theoretical policy, but as deliverable requirements.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Governance domains</h2>
+        <p class="section-intro">
+          Each area connects established delivery and compliance practice to the distinct risks of AI systems.
+        </p>
+        <div class="governance-grid">
+          <article class="governance-card">
+            <h3>Identity and access controls</h3>
+            <p>
+              In regulated environments, identity assurance is a product requirement—not a later hardening step.
+              AI systems that process sensitive workflows need the same rigor: authentication, authorization,
+              least-privilege access, and clear ownership of who can invoke models, view outputs, or change configuration.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Human review requirements</h3>
+            <p>
+              Not every model output should reach customers or production systems without review. Programs must define
+              where human-in-the-loop is mandatory, who approves exceptions, and how review queues, SLAs, and escalation
+              paths operate under load—especially when models assist high-stakes decisions.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Auditability</h3>
+            <p>
+              Release governance and financial-system audits depend on reconstructing what happened, when, and by whom.
+              AI programs need comparable traceability: model and prompt versioning, decision logs, change records, and
+              evidence that controls were applied—not ad hoc explanations after an incident.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Data retention</h3>
+            <p>
+              Retention policies must align with legal, contractual, and operational requirements—not default to
+              indefinite storage. Programs should define what is kept, for how long, where it lives, and how deletion
+              and legal hold processes apply to inputs, outputs, embeddings, and audit artifacts.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Sensitive information handling</h3>
+            <p>
+              PII, financial data, and health-adjacent information require detection, minimization, encryption, and
+              scope control before data reaches a model. Governance starts at ingestion: what is collected, what is
+              redacted or suppressed, and what must never be sent to an external provider.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Explainability</h3>
+            <p>
+              Operators, reviewers, and—in appropriate contexts—users need clarity on what the system did and why.
+              Explainability supports trust, incident response, and regulatory dialogue. It is a delivery requirement,
+              not a research nice-to-have, when AI influences customer-facing or compliance-sensitive outcomes.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Model monitoring</h3>
+            <p>
+              Production readiness does not end at launch. Models need ongoing observability: quality drift, error rates,
+              latency, cost, and behavioral change after updates. The same SLO-minded discipline applied to platform
+              services applies to model performance in production.
+            </p>
+          </article>
+          <article class="governance-card">
+            <h3>Risk management</h3>
+            <p>
+              AI initiatives benefit from the same program mechanics as any large delivery effort: risk registers,
+              dependency tracking, staged rollouts, go/no-go criteria, and executive visibility. Innovation accelerates
+              when risks are named early and owned—not discovered after scale.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container two-col">
+        <div>
+          <h2>From controls to delivery</h2>
+          <p class="section-intro">
+            Governance only matters if it ships. I treat AI controls as program requirements with owners, milestones,
+            and measurable acceptance criteria—integrated into roadmaps rather than bolted on before release.
+          </p>
+          <a class="btn btn-primary" href="index.html#case-studies">View case studies</a>
+        </div>
+        <div class="about-details">
+          <p>
+            Building Ealu.ai applied these principles in practice—from two-factor authentication and sensitive-data
+            handling to release management in a modern AI stack.
+            <a href="index.html#case-studies">See the case study</a>.
+          </p>
+          <ul class="check-list">
+            <li>Define controls before scale, not after an incident</li>
+            <li>Assign accountability across product, engineering, and operations</li>
+            <li>Balance speed with audit readiness and user trust</li>
+            <li>Connect governance work to business value and sustainability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Donal Quinlan. All rights reserved.</p>
+      <p><a href="index.html">Back to portfolio</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
