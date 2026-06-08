@@ -124,11 +124,12 @@
         <h2>Case Studies</h2>
         <p class="section-intro">
           Representative programs demonstrating scope, leadership approach, and measurable results.
+          Select any case study to read the full narrative.
         </p>
         <div class="case-grid">
           <article class="case-card">
             <p class="case-tag">Crisis program management</p>
-            <h3>PPP payments at national scale</h3>
+            <h3>Delivering the Paycheck Protection Program in 18 Days</h3>
             <p>
               Stood up PPP payments capability in 18 days during a time-critical regulatory window—coordinating
               engineering, compliance, and operations while enabling $10B in loans and protecting 100K+ jobs.
@@ -138,6 +139,9 @@
               <li>Managed cross-team dependencies and daily execution risk</li>
               <li>Delivered audit-ready, production-grade payments capability on deadline</li>
             </ul>
+            <button type="button" class="btn btn-secondary case-read-more" data-case-open="ppp" aria-haspopup="dialog">
+              Read full case study
+            </button>
           </article>
           <article class="case-card">
             <p class="case-tag">Release engineering</p>
@@ -151,6 +155,9 @@
               <li>Aligned engineering teams on a consistent, predictable release model</li>
               <li>Built dashboards for release health and leadership visibility</li>
             </ul>
+            <button type="button" class="btn btn-secondary case-read-more" data-case-open="deploy" aria-haspopup="dialog">
+              Read full case study
+            </button>
           </article>
           <article class="case-card">
             <p class="case-tag">Platform delivery</p>
@@ -164,6 +171,9 @@
               <li>Improved environment stability from 50% to 98%</li>
               <li>Measured ~20% productivity gain by removing release bottlenecks</li>
             </ul>
+            <button type="button" class="btn btn-secondary case-read-more" data-case-open="stability" aria-haspopup="dialog">
+              Read full case study
+            </button>
           </article>
           <article class="case-card">
             <p class="case-tag">Ealu.ai · Product delivery</p>
@@ -182,7 +192,200 @@
               Create test data and try the app <a href="https://intake-flow-demo.fly.dev" target="_blank" rel="noopener noreferrer">here</a>
               · Live walkthrough and GitHub source review available upon request.
             </p>
+            <button type="button" class="btn btn-secondary case-read-more" data-case-open="intake" aria-haspopup="dialog">
+              Read full case study
+            </button>
           </article>
+        </div>
+
+        <div id="case-modal-ppp" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-ppp-title" hidden>
+          <div class="case-modal-overlay" data-case-close tabindex="-1"></div>
+          <div class="case-modal-panel">
+            <div class="case-modal-header">
+              <p class="case-tag">Crisis program management · Intuit Payroll</p>
+              <h3 id="case-modal-ppp-title">Delivering the Paycheck Protection Program in 18 Days</h3>
+              <button type="button" class="case-modal-close" data-case-close aria-label="Close case study">&times;</button>
+            </div>
+            <div class="case-modal-body">
+              <section class="case-detail">
+                <h4>Context</h4>
+                <p>In 2020, the CARES Act created the Paycheck Protection Program (PPP) to provide emergency funding for small businesses during the COVID-19 pandemic.</p>
+                <p>For Intuit's payroll customers, speed was critical. Businesses needed immediate access to PPP-related capabilities while regulatory guidance continued to evolve.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Challenge</h4>
+                <p>The team had approximately 18 days from legislation to delivery.</p>
+                <p>Requirements were changing rapidly, multiple stakeholders were involved, and the solution needed to support compliance across federal, state, and local jurisdictions.</p>
+              </section>
+              <section class="case-detail">
+                <h4>My Role</h4>
+                <p>As Senior Technical Program Manager for Intuit Payroll, I coordinated delivery efforts across engineering, product, operations, and tax teams.</p>
+                <p>I managed dependencies, tracked delivery risks, coordinated stakeholder communication, and helped drive execution under an extremely compressed timeline.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Execution</h4>
+                <ul>
+                  <li>Coordinated cross-functional teams to align on scope and delivery priorities.</li>
+                  <li>Worked with Tax Operations teams to understand jurisdiction-specific requirements.</li>
+                  <li>Managed delivery risks and dependencies throughout implementation.</li>
+                  <li>Supported rapid post-launch response, including six hotfix releases over a two-week period.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Outcome</h4>
+                <ul>
+                  <li>Delivered PPP capabilities within 18 days of the legislation becoming law.</li>
+                  <li>Helped enable more than $10B in loans.</li>
+                  <li>Supported more than 100,000 small-business jobs during a period of significant economic uncertainty.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Lessons Learned</h4>
+                <p>High-velocity programs succeed when communication, risk management, and decision-making mechanisms are established before they are needed. Under extreme time pressure, execution discipline becomes even more important than process.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div id="case-modal-deploy" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-deploy-title" hidden>
+          <div class="case-modal-overlay" data-case-close tabindex="-1"></div>
+          <div class="case-modal-panel">
+            <div class="case-modal-header">
+              <p class="case-tag">Release engineering · Intuit</p>
+              <h3 id="case-modal-deploy-title">High-volume deployment modernization</h3>
+              <button type="button" class="case-modal-close" data-case-close aria-label="Close case study">&times;</button>
+            </div>
+            <div class="case-modal-body">
+              <section class="case-detail">
+                <h4>Context</h4>
+                <p>Intuit's high-volume transaction and payments systems required predictable, safe releases at scale. Manual deployment processes were consuming roughly two hours per release window and creating bottlenecks for multiple engineering teams.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Challenge</h4>
+                <p>Release cycles were slow, inconsistently governed, and contributing to production risk. Multiple teams needed a shared release model without sacrificing compliance or rollback safety.</p>
+              </section>
+              <section class="case-detail">
+                <h4>My Role</h4>
+                <p>As Senior Technical Program Manager, I owned cross-team execution for release pipeline modernization—aligning engineering, operations, and leadership on scope, sequencing, and measurable outcomes.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Execution</h4>
+                <ul>
+                  <li>Aligned six engineering teams on a consistent release model and governance checkpoints.</li>
+                  <li>Introduced risk-based release governance tied to deployment safety and rollback readiness.</li>
+                  <li>Built dashboards for release health, incident trends, and executive visibility.</li>
+                  <li>Drove automation and process changes to shorten the critical path to production.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Outcome</h4>
+                <ul>
+                  <li>Reduced deployment windows from ~2 hours to under 10 minutes.</li>
+                  <li>Reduced production incidents by 15% across payments systems.</li>
+                  <li>Improved predictability and stakeholder confidence in release cadence.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Lessons Learned</h4>
+                <p>Release transformation succeeds when governance, tooling, and team accountability change together. Dashboards and clear ownership turn release health from a subjective debate into an executable program.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div id="case-modal-stability" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-stability-title" hidden>
+          <div class="case-modal-overlay" data-case-close tabindex="-1"></div>
+          <div class="case-modal-panel">
+            <div class="case-modal-header">
+              <p class="case-tag">Platform delivery · Intuit</p>
+              <h3 id="case-modal-stability-title">Delivery recovery &amp; environment stability</h3>
+              <button type="button" class="case-modal-close" data-case-close aria-label="Close case study">&times;</button>
+            </div>
+            <div class="case-modal-body">
+              <section class="case-detail">
+                <h4>Context</h4>
+                <p>Platform teams were missing release commitments while developers lost time to unstable non-production environments. Delivery credibility and engineering throughput were both at risk.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Challenge</h4>
+                <p>Releases had slipped consistently, environment stability sat near 50%, and release bottlenecks were suppressing engineering productivity across dependent teams.</p>
+              </section>
+              <section class="case-detail">
+                <h4>My Role</h4>
+                <p>I led a recovery program spanning delivery governance, environment ownership, and capacity planning—partnering with engineering leaders to restore predictable execution.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Execution</h4>
+                <ul>
+                  <li>Introduced stage-gate governance, program dashboards, and capacity planning.</li>
+                  <li>Defined environment tiers, SLAs, and on-call ownership for development systems.</li>
+                  <li>Removed release bottlenecks through sequencing, dependency management, and workflow changes.</li>
+                  <li>Tracked delivery and stability metrics with weekly executive readouts.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Outcome</h4>
+                <ul>
+                  <li>Restored on-time delivery for platforms that had 100% slipped releases.</li>
+                  <li>Improved development environment stability from 50% to 98%.</li>
+                  <li>Increased engineering productivity by approximately 20%.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Lessons Learned</h4>
+                <p>When delivery and platform health fail together, recovery requires visible metrics, explicit ownership, and ruthless prioritization. Stabilizing the inner loop pays back quickly in team velocity.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div id="case-modal-intake" class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-intake-title" hidden>
+          <div class="case-modal-overlay" data-case-close tabindex="-1"></div>
+          <div class="case-modal-panel">
+            <div class="case-modal-header">
+              <p class="case-tag">Ealu.ai · Product delivery</p>
+              <h3 id="case-modal-intake-title">Intake Flow — patient intake with AI-assisted autofill</h3>
+              <button type="button" class="case-modal-close" data-case-close aria-label="Close case study">&times;</button>
+            </div>
+            <div class="case-modal-body">
+              <section class="case-detail">
+                <h4>Context</h4>
+                <p>Patient intake often repeats the same medical history across forms and formats. The goal was a practical product that reduces manual rework while staying credible for real clinical workflows.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Challenge</h4>
+                <p>Build a secure, end-to-end intake experience supporting PDF, Word, and image uploads—with AI-assisted field detection, review before finalize, and a hosted demo suitable for stakeholders and users.</p>
+              </section>
+              <section class="case-detail">
+                <h4>My Role</h4>
+                <p>As Founder and Technical Program Manager at Ealu.ai, I owned product definition, delivery sequencing, and launch of Intake Flow from concept through production deployment.</p>
+              </section>
+              <section class="case-detail">
+                <h4>Execution</h4>
+                <ul>
+                  <li>Delivered React + FastAPI application with JWT auth and progressive web app support.</li>
+                  <li>Integrated Claude for field detection on flat PDFs and Word documents.</li>
+                  <li>Built review/edit workflow and downloadable completed PDF and Word outputs.</li>
+                  <li>Deployed to Fly.io with CI/CD from GitHub Actions and a public demo environment.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Outcome</h4>
+                <ul>
+                  <li>Live demo available at <a href="https://intake-flow-demo.fly.dev" target="_blank" rel="noopener noreferrer">intake-flow-demo.fly.dev</a>.</li>
+                  <li>End-to-end product delivered from problem framing through hosted production demo.</li>
+                  <li>Demonstrates hands-on platform delivery, not just program oversight.</li>
+                </ul>
+              </section>
+              <section class="case-detail">
+                <h4>Learn more</h4>
+                <p>
+                  <a href="https://intake-flow-demo.fly.dev" target="_blank" rel="noopener noreferrer">Try the live demo</a>
+                  · Live walkthrough and GitHub source review available upon request.
+                </p>
+              </section>
+            </div>
+          </div>
         </div>
       </div>
     </section>
