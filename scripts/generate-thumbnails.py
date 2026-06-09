@@ -276,6 +276,28 @@ def draw_vineti() -> Path:
     return save("case-vineti.png", image)
 
 
+def draw_centered_lines_in_box(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
+    lines: list[str],
+    font: ImageFont.FreeTypeFont,
+    color: str,
+    *,
+    line_gap: int = 4,
+) -> None:
+    x0, y0, x1, y1 = box
+    heights = [font.getbbox(line)[3] - font.getbbox(line)[1] for line in lines]
+    total_height = sum(heights) + line_gap * (len(lines) - 1)
+    cursor_y = y0 + ((y1 - y0) - total_height) // 2
+
+    for line, height in zip(lines, heights):
+        bbox = font.getbbox(line)
+        text_width = bbox[2] - bbox[0]
+        x = x0 + ((x1 - x0) - text_width) // 2
+        draw.text((x, cursor_y), line, font=font, fill=rgb(color))
+        cursor_y += height + line_gap
+
+
 def draw_ealu() -> Path:
     image, draw = base_canvas("#6d28d9", "#ede9fe")
     accent = rgb("#6d28d9")
@@ -299,8 +321,14 @@ def draw_ealu() -> Path:
         x1, y1 = nodes[b]
         draw.line((x0, y0, x1, y1), fill=accent, width=3)
 
-    draw.rounded_rectangle((870, 470, 1110, 540), radius=14, outline=accent, width=3)
-    draw.text((900, 492), "Governance by design", font=load_font(FONT_SANS, 24), fill=accent)
+    draw.rounded_rectangle((850, 462, 1120, 548), radius=14, outline=accent, width=3)
+    draw_centered_lines_in_box(
+        draw,
+        (850, 462, 1120, 548),
+        ["Governance", "by design"],
+        load_font(FONT_SANS, 22),
+        "#6d28d9",
+    )
 
     fonts = {
         "tag": load_font(FONT_SANS_REG, 22),
