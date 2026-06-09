@@ -368,9 +368,68 @@ def draw_ealu() -> Path:
     return save("case-ealu.png", image)
 
 
+def draw_apple() -> Path:
+    image, draw = base_canvas("#475569", "#e2e8f0")
+    accent = rgb("#475569")
+
+    hub_x, hub_y = 980, 300
+    draw.ellipse((hub_x - 22, hub_y - 22, hub_x + 22, hub_y + 22), fill=accent)
+    spokes = [
+        (900, 170),
+        (1080, 170),
+        (1120, 300),
+        (1080, 430),
+        (900, 430),
+        (860, 300),
+    ]
+    for x, y in spokes:
+        draw.line((hub_x, hub_y, x, y), fill=accent, width=3)
+        draw.ellipse((x - 14, y - 14, x + 14, y + 14), outline=accent, width=3)
+
+    draw.rounded_rectangle((850, 462, 1120, 548), radius=14, outline=accent, width=3)
+    draw_centered_lines_in_box(
+        draw,
+        (850, 462, 1120, 548),
+        ["500+", "engineers aligned"],
+        load_font(FONT_SANS, 22),
+        "#475569",
+    )
+
+    fonts = {
+        "tag": load_font(FONT_SANS_REG, 22),
+        "title": load_font(FONT_SERIF, 44),
+        "meta": load_font(FONT_SANS_REG, 28),
+    }
+
+    draw.text((56, 72), "CASE STUDY · PROGRAM LEADERSHIP", font=fonts["tag"], fill=accent)
+    draw.text((56, 112), "Apple Maps", font=fonts["meta"], fill=rgb(MUTED))
+    draw_text_block(
+        draw,
+        x=56,
+        y=170,
+        max_width=650,
+        lines=[
+            (
+                "Driving Cross-Organizational Alignment at Apple Maps",
+                fonts["title"],
+                NAVY,
+            ),
+            (
+                "Influence, visibility, and alignment across iOS, macOS, and watchOS",
+                fonts["meta"],
+                MUTED,
+            ),
+        ],
+        line_gap=18,
+    )
+
+    return save("case-apple.png", image)
+
+
 def main() -> None:
     paths = [
         draw_portfolio(),
+        draw_apple(),
         draw_ppp(),
         draw_fiserv(),
         draw_vineti(),

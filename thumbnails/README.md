@@ -5,6 +5,7 @@ Original graphics for LinkedIn **Featured** link uploads (1200×627 PNG). No thi
 | File | Use for |
 |------|---------|
 | `portfolio.png` | Main portfolio / homepage featured link |
+| `case-apple.png` | `https://portfolio.ealu.ai/case-apple.html` |
 | `case-ppp.png` | `https://portfolio.ealu.ai/case-ppp.html` |
 | `case-fiserv.png` | `https://portfolio.ealu.ai/case-fiserv.html` |
 | `case-vineti.png` | `https://portfolio.ealu.ai/case-vineti.html` |
