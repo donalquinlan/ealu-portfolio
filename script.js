@@ -24,6 +24,7 @@
   }
 
   var hashRedirects = {
+    "#case-apple": "case-apple.html",
     "#case-ppp": "case-ppp.html",
     "#case-fiserv": "case-fiserv.html",
     "#case-vineti": "case-vineti.html",
