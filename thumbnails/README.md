@@ -17,3 +17,5 @@ python3 scripts/generate-thumbnails.py
 ```
 
 Requires [Pillow](https://pypi.org/project/pillow/) (`pip install pillow`).
+
+After deploy, thumbnails are also referenced by Open Graph / Twitter meta tags on each HTML page for link previews when URLs are shared.
