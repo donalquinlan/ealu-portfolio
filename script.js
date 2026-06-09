@@ -23,6 +23,13 @@
     });
   }
 
+  var caseHashes = {
+    "case-ppp": "ppp",
+    "case-fiserv": "deploy",
+    "case-vineti": "stability",
+    "case-ealu": "intake"
+  };
+
   var openModal = null;
   var lastFocused = null;
 
@@ -30,18 +37,49 @@
     return document.getElementById("case-modal-" + id);
   }
 
-  function openCaseModal(id) {
+  function caseIdFromHash(hash) {
+    var key = (hash || "").replace(/^#/, "");
+    return caseHashes[key] || null;
+  }
+
+  function hashFromCaseId(id) {
+    var entry = Object.keys(caseHashes).find(function (hash) {
+      return caseHashes[hash] === id;
+    });
+    return entry ? "#" + entry : null;
+  }
+
+  function setCaseHash(id) {
+    var hash = hashFromCaseId(id);
+    if (hash && window.location.hash !== hash) {
+      history.pushState(null, "", hash);
+    }
+  }
+
+  function clearCaseHash() {
+    if (caseIdFromHash(window.location.hash)) {
+      history.pushState(null, "", window.location.pathname + window.location.search + "#case-studies");
+    }
+  }
+
+  function openCaseModal(id, updateHash) {
     var modal = getModal(id);
     if (!modal) {
       return;
     }
 
-    closeCaseModal();
+    if (openModal && openModal !== modal) {
+      openModal.hidden = true;
+    }
 
     lastFocused = document.activeElement;
     openModal = modal;
     modal.hidden = false;
     document.body.classList.add("case-modal-open");
+
+    if (updateHash !== false) {
+      setCaseHash(id);
+    }
 
     var closeButton = modal.querySelector(".case-modal-close");
     if (closeButton) {
@@ -49,7 +87,7 @@
     }
   }
 
-  function closeCaseModal() {
+  function closeCaseModal(clearHash) {
     if (!openModal) {
       return;
     }
@@ -63,6 +101,22 @@
 
     openModal = null;
     lastFocused = null;
+
+    if (clearHash !== false) {
+      clearCaseHash();
+    }
+  }
+
+  function handleCaseHash() {
+    var caseId = caseIdFromHash(window.location.hash);
+    if (caseId) {
+      openCaseModal(caseId, false);
+      return;
+    }
+
+    if (openModal) {
+      closeCaseModal(false);
+    }
   }
 
   document.querySelectorAll("[data-case-open]").forEach(function (button) {
@@ -71,8 +125,20 @@
     });
   });
 
+  document.querySelectorAll(".case-permalink a").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var caseId = caseIdFromHash(link.getAttribute("href"));
+      if (caseId) {
+        openCaseModal(caseId);
+      }
+    });
+  });
+
   document.querySelectorAll("[data-case-close]").forEach(function (element) {
-    element.addEventListener("click", closeCaseModal);
+    element.addEventListener("click", function () {
+      closeCaseModal();
+    });
   });
 
   document.addEventListener("keydown", function (event) {
@@ -80,4 +146,7 @@
       closeCaseModal();
     }
   });
+
+  window.addEventListener("hashchange", handleCaseHash);
+  handleCaseHash();
 })();

@@ -468,6 +468,23 @@ h3 {
   text-align: center;
 }
 
+.case-permalink {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 0.78rem;
+}
+
+.case-permalink a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.case-permalink a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 .case-modal {
   position: fixed;
   inset: 0;
