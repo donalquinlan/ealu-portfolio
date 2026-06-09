@@ -190,27 +190,38 @@ def draw_fiserv() -> Path:
     image, draw = base_canvas("#0f766e", "#ccfbf1")
     accent = rgb("#0f766e")
 
-    start_x = 870
-    for index, y in enumerate((420, 340, 260, 180)):
-        width = 220 - index * 20
+    boxes = [
+        (870, 150, 1080, 206),
+        (884, 232, 1066, 288),
+        (898, 314, 1052, 370),
+        (912, 396, 1038, 452),
+    ]
+
+    for index, (left, top, right, bottom) in enumerate(boxes):
         draw.rounded_rectangle(
-            (start_x + index * 18, y, start_x + index * 18 + width, y + 56),
+            (left, top, right, bottom),
             radius=12,
             outline=accent,
             width=3,
         )
-        if index < 3:
+
+        if index < len(boxes) - 1:
+            _, next_top, _, _ = boxes[index + 1]
+            center_x = (left + right) // 2
+            arrow_top = bottom + 6
+            arrow_bottom = next_top - 6
+            center_y = (arrow_top + arrow_bottom) // 2
             draw.polygon(
                 [
-                    (start_x + index * 18 + width - 8, y + 28),
-                    (start_x + index * 18 + width + 28, y + 28),
-                    (start_x + index * 18 + width + 14, y + 14),
+                    (center_x - 11, center_y - 9),
+                    (center_x + 11, center_y - 9),
+                    (center_x, center_y + 11),
                 ],
                 fill=accent,
             )
 
-    draw.line((870, 500, 1110, 500), fill=accent, width=4)
-    draw.text((900, 512), "8 min releases", font=load_font(FONT_SANS, 28), fill=accent)
+    draw.line((870, 470, 1110, 470), fill=accent, width=4)
+    draw.text((900, 482), "8 min releases", font=load_font(FONT_SANS, 28), fill=accent)
 
     fonts = {
         "tag": load_font(FONT_SANS_REG, 22),
